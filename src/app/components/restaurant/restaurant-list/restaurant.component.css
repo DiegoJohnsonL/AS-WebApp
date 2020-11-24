@@ -1,0 +1,10 @@
+.box{
+    text-align: center;
+    margin: 15px;
+    padding-top: 20px;
+    width: 260px;
+}
+
+.restaurant-box{
+    margin-right: 10px;
+}

@@ -1,26 +1,19 @@
-<div class="hero-head">
-  <header class="navbar">
-    <div class="container">
-      <div class="navbar-brand">
-        <a [routerLink]="['/']" class="navbar-item">
-          <h2>Alpha Spoon</h2>
-        </a>
-        <span class="navbar-burger burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" [routerLink]="['/']" > <b>Alpha Spoon</b></a>
+      <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" [routerLink]="['/products']" href="#">Agregar Producto</a>
+        <a class="navbar-item" [routerLink]="['/restaurante/create']">Agregar Restaurant</a>
       </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <a [routerLink]="['/products']" class="navbar-item">
-            Productos
-          </a>
-          <a (click)="signOut()" class="navbar-item">
-            Desconectarse
-          </a>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" (click)="signOut()">Cerrar Sesion</a></div>
         </div>
       </div>
     </div>
-  </header>
-</div>
+  </div>
+</nav>

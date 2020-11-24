@@ -7,17 +7,41 @@ import {ProductUpdateComponent} from './components/product/product-update/produc
 import {SearchComponent} from './components/search/search.component';
 import {LoginComponent} from './components/login/login.component';
 import {AuthGuard} from './guards/auth.guard';
+import {RestaurantComponent} from './components/restaurant/restaurant-list/restaurant.component';
+import {RestaurantCreateComponent} from './components/restaurant/restaurant-create/restaurant-create.component';
+
 
 const routes: Routes = [
-  {path:'',component:DefaultComponent, canActivate: [AuthGuard] },
-  {path:'search',component:SearchComponent, canActivate: [AuthGuard] },
+  {path:'', component:DefaultComponent, canActivate: [AuthGuard],
+  data:{
+    roles: ['ROLE_ADMIN', 'ROLE_CLIENT'],
+    } 
+  },
+  {path:'search',component:SearchComponent, canActivate: [AuthGuard],
+  data:{
+    roles: ['ROLE_ADMIN', 'ROLE_CLIENT'],
+    } 
+  },
   {
     path:'products',
     canActivate: [AuthGuard],
     children:[
-      {path:'',component:ProductListComponent},
-      {path:'create',component:ProductCreateComponent},
-      {path:':id/update',component:ProductUpdateComponent}
+      {path:'',component:ProductListComponent, data:{
+        roles: ['ROLE_ADMIN', 'ROLE_CLIENT'],
+        } },
+      {path:'create',component:ProductCreateComponent, data:{
+        roles: ['ROLE_ADMIN'],
+        } },
+      {path:':id/update',component:ProductUpdateComponent, data:{roles: ['ROLE_ADMIN']}}
+    ]
+  },
+  {
+    path:'restaurante',
+    canActivate: [AuthGuard],
+    children:[
+      {path:'id/:id',component:RestaurantComponent, data:{roles: ['ROLE_ADMIN','ROLE_CLIENT']}},
+      {path:'create',component:RestaurantCreateComponent, data:{roles: ['ROLE_ADMIN']}},
+      {path:':id/update',component:ProductUpdateComponent, data:{roles: ['ROLE_ADMIN']}}
     ]
   },
   {path:'login',component:LoginComponent}

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {SessionUser} from '../models/session-user.model';
+import { SessionUser } from '../models/session-user.model';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -30,6 +30,16 @@ export class UserStorageService {
     if (user) {
       let objUser = JSON.parse(user);
       return objUser.user as SessionUser;
+    }
+    return null;
+  }
+
+  get type(): string {
+    let user = localStorage.getItem(this.key);
+
+    if (user) {
+      let objUser = JSON.parse(user);
+      return objUser.user.type;
     }
     return null;
   }

@@ -7,7 +7,6 @@ import { DefaultComponent } from './components/default/default.component';
 import { HeaderComponent } from './shareds/header/header.component';
 import { FooterComponent } from './shareds/footer/footer.component';
 import { ProductListComponent } from './components/product/product-list/product-list.component';
-import { ProductDetailComponent } from './components/product/product-list/product-detail/product-detail.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { OrderListComponent } from './components/order/order-list/order-list.component';
@@ -26,6 +25,14 @@ registerLocaleData(localEsPe);
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { UnauthorizedInterceptor } from './interceptors/unauthorized.interceptor';
 import { SearchComponent } from './components/search/search.component';
+import { SearchFilterComponent } from './components/search/search-filter/search-filter.component';
+
+import mockServer from './app.mocks';
+import { RestaurantComponent } from './components/restaurant/restaurant-list/restaurant.component';
+import { RestaurantCreateComponent } from './components/restaurant/restaurant-create/restaurant-create.component';
+
+mockServer();
+
 
 @NgModule({
   declarations: [
@@ -34,14 +41,16 @@ import { SearchComponent } from './components/search/search.component';
     HeaderComponent,
     FooterComponent,
     ProductListComponent,
-    ProductDetailComponent,
     ProductCreateComponent,
     ProductUpdateComponent,
     OrderListComponent,
     LoginComponent,
     ProductFilterPipe,
     RegisterComponent,
-    SearchComponent
+    SearchComponent,
+    SearchFilterComponent,
+    RestaurantComponent,
+    RestaurantCreateComponent
   ],
   imports: [
     BrowserModule,

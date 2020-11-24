@@ -20,6 +20,10 @@ export class ProductService {
     return this.http.get<any>(`${environment.apiUrl}products/${id}`);
   }
 
+  getAllByRestaurant(id: number): Observable<Product[]> {
+    return this.http.get<Product[]>(`/api/products/${id}`);
+  }
+
   create(model: Product): Observable<{}> {
     return this.http.post(`${environment.apiUrl}products`, model);
   }

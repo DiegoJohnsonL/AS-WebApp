@@ -1,10 +1,60 @@
-<h1 class="title">Pide en restaurantes y mucho más.</h1>
-<h2 class="subtitle"><b>{{user.username}}</b>, que bueno tenerte de vuelta por aquí</h2>
+ <!-- Hero del producto -->
+  <section class="hero is-white">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns  is-vcentered reverse-columns">
+          <div class="column
+          is-10-mobile is-offset-1-mobile
+          is-10-tablet is-offset-1-tablet
+          is-5-desktop is-offset-1-desktop
+          is-5-widescreen is-offset-1-widescreen
+          is-5-fullhd is-offset-1-fullhd" data-aos="fade-down">
+            <h1 class="title titled is-1 mb-6">
+				Pide en restaurantes y mucho más.
+            </h1>
+            <h2 class=" subtitled subtitle has-text-grey is-4 has-text-weight-normal is-family-sans-serif">
+				<b>{{user.name}}</b>, que bueno tenerte de vuelta por aquí
+            </h2>
+          </div>
+          <div data-aos="fade-right" class="column
+          is-10-mobile is-offset-1-mobile
+          is-10-tablet is-offset-1-tablet
+          is-4-desktop is-offset-1-desktop
+          is-4-widescreen is-offset-1-widescreen
+          is-4-fullhd is-offset-1-fullhd">
+            <figure class="image">
+              <img src="https://opendoodles.s3-us-west-1.amazonaws.com/coffee.gif">
+            </figure>
+          </div>
 
-<form (ngSubmit)="onSubmit()" class="search-bar">
-    <input type="search" name="search" pattern=".*\S.*" 
-        [(ngModel)]="query" required>
-	<button class="search-btn" type="submit">
-		<span>Buscar</span>
-	</button>
-</form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero is-medium has-text-centered">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div data-aos="zoom-in-up" class="column is-8">
+            <h4 class="title is-4 mb-6">
+				Nuestros Restaurantes <span id="typewriter"></span>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<div class="container">
+	<h3 class="subtitle is-3"></h3>
+	<div  class="columns is-multiline">
+		<div class="column is-one-third" marginBottom="30px" *ngFor="let restaurant of restaurants">
+			<h5 class="subtitle is-5">
+				<a [routerLink]="['/restaurante/id', restaurant.id]">
+				{{restaurant.name}}
+				</a>
+			</h5>
+			<p>{{restaurant.email}}</p>
+			<p>{{restaurant.phoneNumber}}</p>
+		</div>
+	</div>
+</div>

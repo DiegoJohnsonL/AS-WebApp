@@ -1,52 +1,5 @@
 <div class="columns is-mobile">
-    <div class="search-menu column is-one-quarter">
-        <div class="search-filter ng-star-inserted">
-            <div class="cont-filters">
-                <div class="search-stores-menu">
-                    <p class="filter-title ng-star-inserted">Filtrar por</p>
-                    <!---->
-                    <ul>
-                        <li class="ng-star-inserted">
-                            <div class="search-option store-filter active active-option">
-                                <div class="specific-option ng-star-inserted"> Restaurantes </div>
-                                <!---->
-                                <!---->
-                                <!---->
-                            </div>
-                        </li>
-                        <!---->
-                        <!---->
-                        <!---->
-                        <!---->
-                        <li>
-                            <div class="search-option store-filter">
-                                <div class="specific-option"> Tienda </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <hr>
-                <div class="sorters">
-                    <p>Ordenar por</p>
-                    <ul class="hidden-mobile">
-                        <li class="item ng-star-inserted">
-                            <div class="search-option"><label for="price-price_low"> Menor precio </label></div>
-                        </li>
-                        <li class="item ng-star-inserted">
-                            <div class="search-option"><label for="price-promotions"> Promociones </label></div>
-                        </li>
-                        <li class="item ng-star-inserted">
-                            <div class="search-option"><label for="price-price_high"> Mayor precio </label></div>
-                        </li>
-                        <li class="item ng-star-inserted">
-                            <div class="search-option"><label for="price-alphabetical"> Orden alfabético </label></div>
-                        </li>
-                        <!---->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+   <app-search-filter></app-search-filter>
     <div class="column">
         <h2>Resultados para <b>{{query}}</b> en:</h2>
         <div class="content-carousel ">

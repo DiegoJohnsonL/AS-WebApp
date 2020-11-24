@@ -1,0 +1,76 @@
+
+<div *ngIf="acceso">
+
+    <h1 class="title">Registrar un nuevo restaurante</h1>
+    <h2 class="subtitle">Desde aquí podrá registrar un nuevo restaurante.</h2>
+
+    <div *ngIf="loading" class="has-text-centered is-size-3">
+    -- procesando --
+    </div>
+
+    <form *ngIf="!loading" (ngSubmit)="onSubmit()" #productForm="ngForm">
+    <div class="field">
+        <label class="label">Nombre</label>
+        <div class="control">
+        <input required minlength="4" name="name" class="input" type="text"
+                placeholder="Ingrese el nombre del restaurant"
+                [class.is-danger]="name.invalid && name.dirty"
+                [class.is-success]="!name.invalid && name.dirty"
+                [(ngModel)]="restaurant.name" #name="ngModel">
+        </div>
+
+        <ng-container *ngIf="name.invalid && name.dirty">
+        <span *ngIf="name.errors.required" class="help is-danger">El nombre no puede ser nulo.</span>
+        <span *ngIf="name.errors.minlength" class="help is-danger">Debe ingresar como mínimo 10 caracteres.</span>
+        </ng-container>
+
+    </div>
+
+    <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+        <input required minlength="4" name="email" class="input" type="email"
+                placeholder="Ingrese el email del restaurante"
+                [class.is-danger]="email.invalid && email.dirty"
+                [class.is-success]="!email.invalid && email.dirty"
+                [(ngModel)]="restaurant.email" #email="ngModel">
+        </div>
+
+        <ng-container *ngIf="email.invalid && email.dirty">
+        <span *ngIf="email.errors.required" class="help is-danger">El email no puede ser nulo.</span>
+        <span *ngIf="email.errors.minlength" class="help is-danger">Debe ingresar como mínimo 10 caracteres.</span>
+        </ng-container>
+
+    </div>
+
+    <div class="field">
+        <label class="label">Teléfono</label>
+        <div class="control">
+        <input required minlength="4" name="phone" class="input" type="text"
+                placeholder="Ingrese el número de teléfono del restaurant"
+                [class.is-danger]="phoneNumber.invalid && phoneNumber.dirty"
+                [class.is-success]="!phoneNumber.invalid && phoneNumber.dirty"
+                [(ngModel)]="restaurant.phoneNumber" #phoneNumber="ngModel">
+        </div>
+
+        <ng-container *ngIf="phoneNumber.invalid && phoneNumber.dirty">
+        <span *ngIf="phoneNumber.errors.required" class="help is-danger">El teléfono no puede ser nulo.</span>
+        <span *ngIf="phoneNumber.errors.minlength" class="help is-danger">Debe ingresar como mínimo 10 caracteres.</span>
+        </ng-container>
+
+    </div>
+
+    <div class="field is-grouped">
+        <div class="control">
+        <button [disabled]="!productForm.form.valid" class="button is-link is-medium">Guardar</button>
+        </div>
+        <div class="control">
+        <a routerLink="/products" class="button is-link is-light is-medium">Volver</a>
+        </div>
+    </div>
+    </form>
+</div>
+<div *ngIf="!acceso" class="has-text-centered is-size-3">
+    Usted no tiene acceso a esta seccion
+    <img src="../../../../assets/undraw_warning_cyit.png" alt="undraw_warning_cyit" srcset="">
+</div>
