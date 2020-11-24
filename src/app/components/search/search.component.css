@@ -1,0 +1,54 @@
+.search-content .by-stores-search .suggested-stores-content {
+    margin-top: 10px;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.search-content .by-stores-search .suggested-stores-content li {
+    position: relative;
+    width: 100px;
+    text-align: center;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.search-content .by-stores-search .suggested-stores-content li img {
+    height: 58px;
+    max-width: none;
+    margin: 0 -50%;
+}
+
+.search-content .by-stores-search .suggested-stores-content li .rounded-img {
+    z-index: 2;
+    width: 58px;
+    height: 58px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.search-content .by-stores-search .suggested-stores-content li .circle {
+    top: -4px;
+    z-index: 1;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 8px 0 rgba(51,41,39,.07);
+}
+
+.wrapper-carousel .content-carousel>.elements {
+    width: calc(100% - 40px);
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: row;
+    overflow: hidden;
+}

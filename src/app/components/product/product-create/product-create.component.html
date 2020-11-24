@@ -1,0 +1,48 @@
+<h1 class="title">Registrar un nuevo producto</h1>
+<h2 class="subtitle">Desde aquí podrá registrar un nuevo producto.</h2>
+
+<div *ngIf="loading" class="has-text-centered is-size-3">
+  -- procesando --
+</div>
+
+<form *ngIf="!loading" (ngSubmit)="onSubmit()" #productForm="ngForm">
+  <div class="field">
+    <label class="label">Nombre</label>
+    <div class="control">
+      <input required minlength="4" name="name" class="input" type="text"
+             placeholder="Ingrese el nombre del producto"
+             [class.is-danger]="name.invalid && name.dirty"
+             [class.is-success]="!name.invalid && name.dirty"
+             [(ngModel)]="product.name" #name="ngModel">
+    </div>
+
+    <ng-container *ngIf="name.invalid && name.dirty">
+      <span *ngIf="name.errors.required" class="help is-danger">El nombre no puede ser nulo.</span>
+      <span *ngIf="name.errors.minlength" class="help is-danger">Debe ingresar como mínimo 10 caracteres.</span>
+    </ng-container>
+
+  </div>
+
+  <div class="field">
+    <label class="label">Precio</label>
+    <div class="control">
+      <input required minlength="1" name="price" class="input" type="number" placeholder="Ingrese el precio"
+             [class.is-danger]="price.invalid && price.dirty"
+             [class.is-success]="!price.invalid && price.dirty" [(ngModel)]="product.price" #price="ngModel">
+    </div>
+
+    <ng-container *ngIf="price.invalid && price.dirty">
+      <span *ngIf="price.errors.required" class="help is-danger">El precio no puede ser nulo.</span>
+      <span *ngIf="price.errors.minlength" class="help is-danger">Debe ingresar como mínimo el valor 1.</span>
+    </ng-container>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button [disabled]="!productForm.form.valid" class="button is-link is-medium">Guardar</button>
+    </div>
+    <div class="control">
+      <a routerLink="/products" class="button is-link is-light is-medium">Volver</a>
+    </div>
+  </div>
+</form>

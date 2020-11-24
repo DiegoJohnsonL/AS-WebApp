@@ -1,0 +1,22 @@
+<div class="columns is-vcentered">
+  <div class="column has-text-right">
+    <a [routerLink]="['create']" class="button is-primary is-medium">Registrar un nuevo producto</a>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column">
+    <label class="label">Buscador Productos</label>
+    <div class="col-md-4">
+      <input [(ngModel)]="listFilter" class="input" placeholder="Ingrese el nombre producto " name="filter" type="text">
+    </div>
+  </div>
+</div>
+
+<div *ngIf="products.length" class="columns is-multiline">
+  <app-product-detail class="column is-4" *ngFor="let product of products | productFilter:listFilter" (remove)="removeDeleteProduct($event)" [entry]="product"></app-product-detail>
+</div>
+
+<div *ngIf="products.length===0" class="has-text-centered is-size-4">
+  - no se han encontrado registros -
+</div>

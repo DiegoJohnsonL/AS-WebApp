@@ -1,0 +1,10 @@
+<h1 class="title">Pide en restaurantes y mucho más.</h1>
+<h2 class="subtitle"><b>{{user.username}}</b>, que bueno tenerte de vuelta por aquí</h2>
+
+<form (ngSubmit)="onSubmit()" class="search-bar">
+    <input type="search" name="search" pattern=".*\S.*" 
+        [(ngModel)]="query" required>
+	<button class="search-btn" type="submit">
+		<span>Buscar</span>
+	</button>
+</form>
