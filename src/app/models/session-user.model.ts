@@ -1,6 +1,6 @@
 export class SessionUser {
-  id:number;
-  username:string;
+  id: number;
+  username: string;
   name: string;
   type: string;
 }

@@ -4,4 +4,3 @@ export class Restaurant {
     email: string;
     phoneNumber: string;
   }
-  

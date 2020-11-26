@@ -12,27 +12,27 @@ import {environment} from '../../environments/environment';
 export class ProductService {
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${environment.apiUrl}products`);
+  getAll(restaurantId: number): Observable<Product[]> {
+    return this.http.get<Product[]>(`${environment.apiUrl}restaurant/${restaurantId}/products`);
   }
 
-  get(id: number): Observable<Product> {
-    return this.http.get<any>(`${environment.apiUrl}products/${id}`);
+  get(id: number, restaurantId: number): Observable<Product> {
+    return this.http.get<any>(`${environment.apiUrl}restaurant/${restaurantId}/products/${id}`);
   }
 
-  getAllByRestaurant(id: number): Observable<Product[]> {
-    return this.http.get<Product[]>(`/api/products/${id}`);
+  getAllByRestaurant(id: number, restaurantId: number): Observable<Product[]> {
+    return this.http.get<Product[]>(`restaurant/${restaurantId}/products/${id}`);
   }
 
-  create(model: Product): Observable<{}> {
-    return this.http.post(`${environment.apiUrl}products`, model);
+  create(model: Product, restaurantId: number): Observable<{}> {
+    return this.http.post(`${environment.apiUrl}restaurant/${restaurantId}/products`, model);
   }
 
-  delete(id: number): Observable<{}> {
-    return this.http.delete(`${environment.apiUrl}products/${id}`);
+  delete(id: number, restaurantId: number): Observable<{}> {
+    return this.http.delete(`${environment.apiUrl}restaurant/${restaurantId}/products/${id}`);
   }
 
-  update(model: Product): Observable<{}> {
-    return this.http.put(`${environment.apiUrl}products`, model);
+  update(model: Product, id: number, restaurantId: number): Observable<{}> {
+    return this.http.put(`${environment.apiUrl}restaurant/${restaurantId}/products/${id}`, model);
   }
 }

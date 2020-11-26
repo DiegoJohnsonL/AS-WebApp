@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-import { Restaurant } from '../models/restaurant.model';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Product} from '../models/product.model';
+import {Restaurant} from '../models/restaurant.model';
 import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RestaurantService {
-  counter = 1;
+export class TagService {
+
   constructor(private http: HttpClient) {}
   getAll(): Observable<Restaurant[]> {
     return this.http.get<Restaurant[]>(`${environment.apiUrl}restaurants`);

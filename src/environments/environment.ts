@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "/api/"
+  apiUrl: 'http://order-api-upc.herokuapp.com/api/v1/'
 };
 
 /*
