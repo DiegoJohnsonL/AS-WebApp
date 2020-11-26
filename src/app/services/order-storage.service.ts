@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Order } from '../models/order.model';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,15 +26,22 @@ export class OrderStorageService {
     return localStorage.getItem(this.key) !== null;
   }
 
-  set(object): void {
+  add(object): void {
     const orden = JSON.parse(
         localStorage.getItem(
             this.key
         )
-    )
+    ) ? JSON.parse(localStorage.getItem(this.key)): [];
+    
+    const index = orden.findIndex(e => e.id === object.id);
 
-    orden.push(object)
-
+    if (index===-1){
+      object.ammount =  1;
+      orden.push(object);
+    } else {
+      orden[index] == orden[index].ammount + 1;
+    }
+    
     localStorage.setItem(
       this.key,
       JSON.stringify(orden)

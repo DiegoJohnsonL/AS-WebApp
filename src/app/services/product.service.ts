@@ -40,8 +40,8 @@ export class ProductService {
     return this.http.post(`${environment.apiUrl}restaurants/${restaurantId}/products`, model, { headers: headers });
   }
 
-  delete(id: number, restaurantId: number): Observable<{}> {
-    return this.http.delete(`${environment.apiUrl}restaurant/${restaurantId}/products/${id}`);
+  delete(id: number, restaurantId: number): Observable<any> {
+    return this.http.delete(`${environment.apiUrl}restaurants/${restaurantId}/products/${id}`);
   }
 
   update(model: Product, id: number, restaurantId: number): Observable<{}> {

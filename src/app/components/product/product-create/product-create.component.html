@@ -42,7 +42,7 @@
       <button [disabled]="!productForm.form.valid" class="button is-link is-medium">Guardar</button>
     </div>
     <div class="control">
-      <a routerLink="/products" class="button is-link is-light is-medium">Volver</a>
+      <a [routerLink]="['/restaurante/id', this.id]" class="button is-link is-light is-medium">Volver</a>
     </div>
   </div>
 </form>

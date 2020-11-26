@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderStorageService } from '../../../services/order-storage.service';
 
 @Component({
   selector: 'app-order-list',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
+  public orders;
 
-  constructor() { }
+  constructor(
+      private orderStorageService: OrderStorageService
+    ) { }
 
   ngOnInit(): void {
+    this.orders = this.orderStorageService.order;
   }
 
 }

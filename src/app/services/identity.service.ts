@@ -12,7 +12,11 @@ export class IdentityService {
   constructor(private http: HttpClient) { }
 
   signIn(model: Login): Observable<any> {
-    console.log(model, `${environment.apiUrl}login`);
     return this.http.post(`${environment.apiUrl}login`, model);
+  }
+
+  signUp(model: Login): Observable<any> {
+    console.log(model, `${environment.apiUrl}signUp`);
+    return this.http.post(`${environment.apiUrl}signup`, model);
   }
 }

@@ -10,6 +10,8 @@ import {LoginComponent} from './components/login/login.component';
 import {AuthGuard} from './guards/auth.guard';
 import {RestaurantComponent} from './components/restaurant/restaurant-list/restaurant.component';
 import {RestaurantCreateComponent} from './components/restaurant/restaurant-create/restaurant-create.component';
+import { OrderListComponent } from './components/order/order-list/order-list.component';
+
 
 
 const routes: Routes = [
@@ -27,14 +29,14 @@ const routes: Routes = [
     path:'products',
     canActivate: [AuthGuard],
     children:[
-      {path:'',component:ProductListComponent, data:{
+      {path:'', component:ProductListComponent, data:{
         roles: ['ROLE_ADMIN', 'ROLE_CLIENT'],
         } },
-      {path:'create/restaurant/:id',component:ProductCreateComponent, 
+      {path:'create/restaurant/:id', component:ProductCreateComponent, 
         data:{roles: ['ROLE_ADMIN']}},
-      {path:':id/update',component:ProductUpdateComponent, 
+      {path:':id/update', component:ProductUpdateComponent, 
         data:{roles: ['ROLE_ADMIN']}},
-      {path:':id2/:id',component:ProductSingleComponent, 
+      {path:':id2/:id', component:ProductSingleComponent, 
         data:{roles: ['ROLE_ADMIN']}}
     ]
   },
@@ -47,7 +49,9 @@ const routes: Routes = [
       {path:':id/update',component:ProductUpdateComponent, data:{roles: ['ROLE_ADMIN']}}
     ]
   },
-  {path:'login',component:LoginComponent}
+  {path:'login',component:LoginComponent},
+  {path:'order', canActivate: [AuthGuard], component:OrderListComponent}
+
 ];
 
 @NgModule({

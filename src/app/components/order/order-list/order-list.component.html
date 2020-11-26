@@ -1,1 +1,9 @@
-<p>order-list works!</p>
+<div>
+    <h1 class="is-size-1">Orden!</h1>
+    <div *ngFor="let order of orders"> 
+        <p class="has-text-weight-bold	is-size-6">{{order.name}}</p>
+        <p>Precio: S/{{order.price}}</p>
+        <p>Cantidad: {{order.ammount}}</p>
+        <hr class="dashed">
+    </div>
+</div>

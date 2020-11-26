@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { UserStorageService } from '../../services/user-storage.service';
 
 @Component({
@@ -27,5 +27,4 @@ export class HeaderComponent implements OnInit {
     this.userStorageService.destroy();
     this.router.navigate(['/login']);
   }
-
 }
