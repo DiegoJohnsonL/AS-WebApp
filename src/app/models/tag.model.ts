@@ -1,4 +1,4 @@
-export class TagResource {
+export class TagModel {
   id: number;
   name: string;
 }
