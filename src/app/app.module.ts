@@ -26,14 +26,9 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { UnauthorizedInterceptor } from './interceptors/unauthorized.interceptor';
 import { SearchComponent } from './components/search/search.component';
 import { SearchFilterComponent } from './components/search/search-filter/search-filter.component';
-
-import mockServer from './app.mocks';
 import { RestaurantComponent } from './components/restaurant/restaurant-list/restaurant.component';
 import { RestaurantCreateComponent } from './components/restaurant/restaurant-create/restaurant-create.component';
 import { ProductSingleComponent } from './components/product/product-single/product-single.component';
-
-mockServer();
-
 
 @NgModule({
   declarations: [

@@ -34,27 +34,20 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     let self = this;
-
-    self.user.username = self.model.username;
-    self.user.name = self.model.name;
-    self.user.type = self.model.type;
-    self.user.id = 0;
-    self.user.token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJVbmlkZXh0ZXIiLCJpYXQiOjE2MDYzNjAwNDMsImV4cCI6MTYwNjM2MzY0M30.N1_kDIbUKVEY9vjcKUXWdBiXRHwyru9jRdEl09DQVYN1TGkFiTRIsdnKC0Icc0HMEXAN53XZoBMEsLDB4AV91A";
-
     
-    self.router.navigate(['/']);
-    self.userStorageService.set({user: self.user});
-    /*this.identityService
+    this.identityService
       .signIn(this.model)
       .subscribe({
         next(data) {
           //console.log(data['body']);
-          self.userStorageService.set(data['body']);
+          self.user = data['body']
+          self.user.type = self.model.type;
+          self.userStorageService.set(self.user);
           self.router.navigate(['/']);
         },
         error() {
           self.invalid = true;
         }
-      });*/
+      });
   }
 }

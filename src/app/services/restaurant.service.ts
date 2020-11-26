@@ -1,29 +1,38 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {environment} from '../../environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 import { Restaurant } from '../models/restaurant.model';
+import { UserStorageService } from './user-storage.service';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantService {
-  restaurantUrl = 'api/restaurants';
-
+  restaurantUrl = `${environment.apiUrl}restaurants`;
   counter = 1;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private userStorageService: UserStorageService) {
+  }
   
   public getRestaurants() {
-    return this.http.get<Array<Restaurant>>(`${environment.apiUrl}restaurants`);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.userStorageService.token}` });
+    return this.http.get<Array<Restaurant>>(this.restaurantUrl,  {headers: headers});
   }
 
   public get(id: number) {
-    return this.http.get<Restaurant>(`/${this.restaurantUrl}/${id}`);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json',
+    'Authorization': `Bearer ${this.userStorageService.token}` });
+    return this.http.get<Restaurant>(`${this.restaurantUrl}/${id}`, {headers: headers});
   }
 
   public create(restaurant: Restaurant) {
     this.counter++;
-    return this.http.post(this.restaurantUrl, restaurant);
+    console.log("POST", restaurant)
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.userStorageService.token}` });
+    return this.http.post(this.restaurantUrl, restaurant, {headers: headers});
   }
 
   public delete(id: string) {

@@ -17,7 +17,8 @@ export class RestaurantCreateComponent implements OnInit {
     private restaurantService:RestaurantService, 
     private userStorageService:UserStorageService
   ) {
-    if (userStorageService.type === 'administracion'){
+    console.log(userStorageService.type)
+    if (userStorageService.type === "administracion"){
       this.acceso = true;
     }
   }

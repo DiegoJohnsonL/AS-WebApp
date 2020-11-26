@@ -34,12 +34,22 @@ export class UserStorageService {
     return null;
   }
 
+  get token(): string {
+    let user = localStorage.getItem(this.key);
+
+    if (user) {
+      let objUser = JSON.parse(user);
+      return objUser.token;
+    }
+    return null;
+  }
+
   get type(): string {
     let user = localStorage.getItem(this.key);
 
     if (user) {
       let objUser = JSON.parse(user);
-      return objUser.user.type;
+      return objUser.type;
     }
     return null;
   }

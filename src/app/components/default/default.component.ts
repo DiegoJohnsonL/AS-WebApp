@@ -31,7 +31,10 @@ export class DefaultComponent implements OnInit {
 
   loadData() {
     this.restaurantService.getRestaurants()
-      .subscribe(data => (this.restaurants = [...data]));
+      .subscribe(data => {
+        console.log(data);
+        this.restaurants = [...data.body.content]
+      });
   }
 
   onSubmit(): void {
