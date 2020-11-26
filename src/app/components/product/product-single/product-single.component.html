@@ -5,9 +5,9 @@
             class="is-rounded" 
             alt="product">    
     </figure>
-    <h2>{{id}} {{product.name}} NOMBRE</h2>
-    <p>{{product.price}} PRECIO</p>
-    <div *ngIf="false" class="row">
+    <h2>{{product.name}}</h2>
+    <p>S/.{{product.price}}</p>
+    <div *ngIf="access" class="row">
         <button [routerLink]="['/products/edit', id]"  class="button is-link">
             Editar Producto
         </button>

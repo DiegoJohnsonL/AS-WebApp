@@ -21,7 +21,7 @@ export class ProductUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading=true;
-    this.productService.get(this.route.snapshot.params.id)
+    this.productService.get(this.route.snapshot.params.id, 1)
       .subscribe((data) => {
         this.product=data['body'];
         this.loading=false;
@@ -31,7 +31,7 @@ export class ProductUpdateComponent implements OnInit {
   onSubmit(): void {
     this.loading = true;
     console.log(this.product);
-    this.productService.update(this.product)
+    this.productService.update(this.product, 1, 1)
       .subscribe(() => {
         this.router.navigate(['/products']);
       });

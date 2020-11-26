@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://aplha-spoon-api.herokuapp.com/api/v1/'
+  apiUrl: 'https://alpha-spoon-api.herokuapp.com/api/v1/'
 };
 
 /*

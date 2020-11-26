@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://aplha-spoon-api.herokuapp.com/api/v1/'
+  apiUrl: 'https://alpha-spoon-api.herokuapp.com/api/v1/'
 };

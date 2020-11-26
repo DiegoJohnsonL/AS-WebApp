@@ -1,5 +1,4 @@
 
-
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -13,15 +12,15 @@ import { UserStorageService } from './user-storage.service';
 export class ProductService {
   constructor(private http: HttpClient, private userStorageService: UserStorageService) { }
 
-  getAll(restaurantId: number): Observable<Product[]> {
+  getAll(restaurantId: number): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.userStorageService.token}` });
 
-    return this.http.get<Product[]>(`${environment.apiUrl}restaurants/${restaurantId}/products`,  
+    return this.http.get<any>(`${environment.apiUrl}restaurants/${restaurantId}/products`,  
       { headers: headers });
   }
 
-  get(id: number, restaurantId: number): Observable<Product> {
+  get(id: number, restaurantId: number): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json',
     'Authorization': `Bearer ${this.userStorageService.token}` });
 
@@ -29,12 +28,12 @@ export class ProductService {
     { headers: headers });
   }
 
-  getAllByRestaurant(id: number, restaurantId: number): Observable<Product[]> {
+  getAllByRestaurant(id: number, restaurantId: number): Observable<any> {
 
-    return this.http.get<Product[]>(`restaurant/${restaurantId}/products/${id}`);
+    return this.http.get<any>(`restaurant/${restaurantId}/products/${id}`);
   }
 
-  create(model: Product, restaurantId: number): Observable<{}> {
+  create(model: Product, restaurantId: number): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.userStorageService.token}` });
 

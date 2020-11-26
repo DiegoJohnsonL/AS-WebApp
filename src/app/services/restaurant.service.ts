@@ -18,14 +18,14 @@ export class RestaurantService {
   public getRestaurants() {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.userStorageService.token}` });
-    return this.http.get<Array<Restaurant>>(this.restaurantUrl,  {headers: headers});
+    return this.http.get<any>(this.restaurantUrl,  {headers: headers});
   }
 
   public get(id: number) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json',
     'Authorization': `Bearer ${this.userStorageService.token}` });
     console.log(`${this.restaurantUrl}/${id}`)
-    return this.http.get<Restaurant>(`${this.restaurantUrl}/${id}`, {headers: headers});
+    return this.http.get<any>(`${this.restaurantUrl}/${id}`, {headers: headers});
   }
 
   public create(restaurant: Restaurant) {

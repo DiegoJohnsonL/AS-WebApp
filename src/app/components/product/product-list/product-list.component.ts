@@ -23,7 +23,7 @@ export class ProductListComponent implements OnInit {
   }
 
   getAll(): void {
-    let request = this.productService.getAll();
+    let request = this.productService.getAll(1);
 
     request.subscribe((data) => {
       this.products = data['body'];

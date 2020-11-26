@@ -10,10 +10,10 @@ import {environment} from '../../environments/environment';
 export class TagService {
 
   constructor(private http: HttpClient) {}
-  getAll(): Observable<Restaurant[]> {
-    return this.http.get<Restaurant[]>(`${environment.apiUrl}restaurants`);
+  getAll(): Observable<any> {
+    return this.http.get<any>(`${environment.apiUrl}restaurants`);
   }
-  get(id: number): Observable<Restaurant> {
+  get(id: number): Observable<any> {
     return this.http.get<any>(`${environment.apiUrl}restaurants/${id}`);
   }
   create(model: Restaurant): Observable<{}> {

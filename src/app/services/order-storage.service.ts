@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SessionUser } from '../models/order.model.model';
+import { Order } from '../models/order.model';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class OrderStorageService {
     if (this.hasOrden) {}
   }
 
-  get user(): SessionUser {
+  get order(): any {
     let orden = localStorage.getItem(this.key);
 
     if (orden) {
@@ -27,7 +27,6 @@ export class OrderStorageService {
   get ordenExist(): boolean{
     return localStorage.getItem(this.key) !== null;
   }
-
 
   set(object): void {
     const orden = JSON.parse(

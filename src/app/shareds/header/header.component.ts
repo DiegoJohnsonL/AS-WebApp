@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.userStorageService.isUserLoggedIn.subscribe(
       value => this.conectado = value
     )
