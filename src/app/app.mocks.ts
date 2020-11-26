@@ -18,7 +18,25 @@ const restaurants = [
         name: 'McDonalds',
         email : 'mc@donalds.com',
         phoneNumber : '123124234'
-    }
+    },
+    {
+      id: 1580385928435,
+      name: 'Mama Tomato',
+      email: 'mama@tomato.pe',
+      phoneNumber: '1951452535'
+  },
+  {
+      id: 1580325928457,
+      name: 'Tremendo Burrito',
+      email: 'tremendo@burrito.com',
+      phoneNumber: '1951172535'
+  },
+  {
+      id: 1580315936498,
+      name: 'McDonalds',
+      email : 'mc@donalds.com',
+      phoneNumber : '123124234'
+  }
 ];
 
 const products = [

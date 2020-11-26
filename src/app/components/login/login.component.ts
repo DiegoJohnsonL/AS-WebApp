@@ -24,7 +24,10 @@ export class LoginComponent implements OnInit {
   ) { 
     this.register = true;
   }
+  ngOnInit():void{
 
+  }
+  
   algoMas():void {
     this.register = false;
   }
