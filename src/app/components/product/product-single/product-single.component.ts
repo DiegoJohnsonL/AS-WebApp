@@ -19,13 +19,14 @@ export class ProductSingleComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.id = params['id']
-      this.loadData();
+        this.id = params['id']
+        this.loadData(params['id2']);
     });
   }
 
-  loadData() {
+  loadData(restaurantId) {
+    console.log(restaurantId);
     this.productService.get(this.id)
-      .subscribe(data => (this.product = data));
+      .subscribe(data => (this.product = data))
   }
 }

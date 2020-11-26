@@ -1,12 +1,25 @@
-<div>
-    <figure class="is-400x400">
+<div class=" has-text-centered">
+    <figure class="is-250x250">
         <img 
-            src="https://picsum.photos/id/1080/400/400" 
+            src="https://picsum.photos/id/1080/250/250" 
             class="is-rounded" 
-            alt="products ">    
+            alt="product">    
     </figure>
-    <p>product-single works! {{id}} {{product.name}}</p>
-    
+    <h2>{{id}} {{product.name}} NOMBRE</h2>
+    <p>{{product.price}} PRECIO</p>
+    <div *ngIf="false" class="row">
+        <button [routerLink]="['/products/edit', id]"  class="button is-link">
+            Editar Producto
+        </button>
+        <button [routerLink]="['/products/crear']" class="button is-danger">
+            Borrar Producto
+        </button>
+    </div>
+    <div class="container">
+        <button [routerLink]="['/products/edit', id]"  class="button is-link">
+            Agregar al Carrito
+        </button>
+    </div>
 </div>
 
 

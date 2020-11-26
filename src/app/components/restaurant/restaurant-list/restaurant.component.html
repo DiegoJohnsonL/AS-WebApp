@@ -37,7 +37,7 @@
                 *ngFor="let product of products">
                 <img src="https://picsum.photos/id/1080/200/200" class="is-200x200" alt="products">
                 <h6 class="subtitle">
-                    <a [routerLink]="['/products/id/', product.id]">
+                    <a [routerLink]="['/products', id, product.id]">
                         {{ product.name }}
                     </a>
                 </h6>

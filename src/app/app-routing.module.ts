@@ -34,7 +34,7 @@ const routes: Routes = [
         data:{roles: ['ROLE_ADMIN']}},
       {path:':id/update',component:ProductUpdateComponent, 
         data:{roles: ['ROLE_ADMIN']}},
-      {path:'id/:id',component:ProductSingleComponent, 
+      {path:':id2/:id',component:ProductSingleComponent, 
         data:{roles: ['ROLE_ADMIN']}}
     ]
   },
