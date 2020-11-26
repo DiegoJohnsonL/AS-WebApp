@@ -42,7 +42,9 @@
                     </a>
                 </h6>
                 <p class="price"><b>Precio:</b> {{ product.price.toFixed(2) }}</p>
-                <button class="button is-primary">Ordenar</button>
+                <button (click)="agregarAlCarrito(product)" class="button is-primary">
+                    Ordenar
+                </button>
             </div>
             <div *ngIf="products.length===0">
                 Aun no tenemos productos para este negocio

@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
   
   changeTypeOfForm(type: boolean):void {
     this.register = type;
+    this.onSubmit();
   }
 
   onSubmit(): void {
@@ -42,12 +43,9 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next(data) {
           self.invalid = false;
-          console.log(data['body'], "DDD!!");
           self.user = data['body']
-          console.log(self.user);
           self.register = false;
           self.validRegister = true;
-          console.log("Vuenas")
         },
         error() {
           self.invalid = true;
@@ -59,7 +57,6 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next(data) {
           self.invalid = false;
-          console.log(data, "!!!");
           self.user = data['body']
           self.user.type = self.model.type;
           self.userStorageService.set(self.user);

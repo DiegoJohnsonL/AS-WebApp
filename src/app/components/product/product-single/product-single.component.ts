@@ -22,7 +22,7 @@ export class ProductSingleComponent implements OnInit {
     private userStorageService: UserStorageService,
     private orderStorageService: OrderStorageService
     ) {  
-      if (userStorageService.type === "administracion"){
+      if (this.userStorageService.type === "administracion"){
         this.access = true;
       }
     }

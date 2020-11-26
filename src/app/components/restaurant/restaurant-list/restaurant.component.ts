@@ -5,6 +5,7 @@ import { Product } from '../../../models/product.model';
 import { ProductService } from '../../../services/product.service'
 import { RestaurantService } from '../../../services/restaurant.service';
 import { UserStorageService } from '../../../services/user-storage.service';
+import { OrderStorageService } from '../../../services/order-storage.service';
 
 @Component({
   selector: 'app-restaurant',
@@ -21,9 +22,10 @@ export class RestaurantComponent implements OnInit {
     private route: ActivatedRoute,
     private restaurantService: RestaurantService,
     private productService: ProductService,
-    private userStorageService: UserStorageService
+    private userStorageService: UserStorageService,
+    private orderStorageService: OrderStorageService
   ) {  
-    if (userStorageService.type === "administracion"){
+    if (this.userStorageService.type === "administracion"){
       this.access = true;
     }
   }
@@ -40,5 +42,9 @@ export class RestaurantComponent implements OnInit {
       .subscribe(data => (this.products = [...data.body.content]));
     this.restaurantService.get(this.id)
       .subscribe(data => (this.restaurant = data.body));
+  }
+
+  agregarAlCarrito(product){
+    this.orderStorageService.add(product);
   }
 }

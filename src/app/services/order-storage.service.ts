@@ -19,7 +19,7 @@ export class OrderStorageService {
       let objOrder = JSON.parse(orden);
       return objOrder ;
     }
-    return null;
+    return [];
   }
 
   get ordenExist(): boolean{
@@ -35,13 +35,14 @@ export class OrderStorageService {
     
     const index = orden.findIndex(e => e.id === object.id);
 
-    if (index===-1){
+    console.log(object, orden[index], index)
+    if (index === -1){
       object.ammount =  1;
       orden.push(object);
     } else {
-      orden[index] == orden[index].ammount + 1;
+      orden[index].ammount = orden[index].ammount + 1;
     }
-    
+    console.log(orden)
     localStorage.setItem(
       this.key,
       JSON.stringify(orden)
@@ -49,6 +50,9 @@ export class OrderStorageService {
   }
 
   destroy(): void {
-    localStorage.removeItem(this.key);
+    localStorage.setItem(
+      this.key,
+      JSON.stringify([])
+    );;
   }
 }

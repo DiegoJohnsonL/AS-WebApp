@@ -9,8 +9,7 @@
       </div>
 
       <div class="box">
-        <h2 *ngIf="!register" class="is-size-2 has-text-centered">Iniciar Sesion</h2>
-        <h2 *ngIf="register" class="is-size-2 has-text-centered">Registro</h2>
+        <h2 class="is-size-2 has-text-centered">Iniciar Sesion</h2>
         <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
           <div>
             <div class="form-check form-check-inline">
@@ -57,13 +56,13 @@
           </div>
           <div class="field">
             <button [disabled]="!loginForm.form.valid" class="button is-success is-fullwidth">
-              {{register? "Registrarme" : "Iniciar Sesion"}}
+              {{"Iniciar Sesion"}}
             </button>
           </div>
         </form>
         <div class="btn-container">
           <button (click)="changeTypeOfForm(true)" class="button is-info">
-            {{!register? "Registrarme" : "Iniciar Sesion"}}
+            {{"Registrarme"}}
           </button>
         </div>
       </div>

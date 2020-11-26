@@ -17,4 +17,8 @@ export class OrderListComponent implements OnInit {
     this.orders = this.orderStorageService.order;
   }
 
+  clean(): void {
+    this.orderStorageService.destroy();
+  }
+
 }

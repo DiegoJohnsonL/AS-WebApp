@@ -6,4 +6,10 @@
         <p>Cantidad: {{order.ammount}}</p>
         <hr class="dashed">
     </div>
+    <p *ngIf="!orders.length">
+        Aun no ha agregado productos a su carrito
+    </p>
+    <button *ngIf="orders.length" (click)="clean()" class="button has-text-centered is-fullwidth is-info">
+        Clear
+    </button>
 </div>
