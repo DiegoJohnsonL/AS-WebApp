@@ -4,6 +4,7 @@ import {DefaultComponent} from './components/default/default.component';
 import {ProductListComponent} from './components/product/product-list/product-list.component';
 import {ProductCreateComponent} from './components/product/product-create/product-create.component';
 import {ProductUpdateComponent} from './components/product/product-update/product-update.component';
+import {ProductSingleComponent} from './components/product/product-single/product-single.component';
 import {SearchComponent} from './components/search/search.component';
 import {LoginComponent} from './components/login/login.component';
 import {AuthGuard} from './guards/auth.guard';
@@ -29,10 +30,12 @@ const routes: Routes = [
       {path:'',component:ProductListComponent, data:{
         roles: ['ROLE_ADMIN', 'ROLE_CLIENT'],
         } },
-      {path:'create',component:ProductCreateComponent, data:{
-        roles: ['ROLE_ADMIN'],
-        } },
-      {path:':id/update',component:ProductUpdateComponent, data:{roles: ['ROLE_ADMIN']}}
+      {path:'create',component:ProductCreateComponent, 
+        data:{roles: ['ROLE_ADMIN']}},
+      {path:':id/update',component:ProductUpdateComponent, 
+        data:{roles: ['ROLE_ADMIN']}},
+      {path:'id/:id',component:ProductSingleComponent, 
+        data:{roles: ['ROLE_ADMIN']}}
     ]
   },
   {

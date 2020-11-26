@@ -17,7 +17,7 @@ export class ProductService {
   }
 
   get(id: number): Observable<Product> {
-    return this.http.get<any>(`${environment.apiUrl}products/${id}`);
+    return this.http.get<Product>(`/api/products/${id}`);
   }
 
   getAllByRestaurant(id: number): Observable<Product[]> {

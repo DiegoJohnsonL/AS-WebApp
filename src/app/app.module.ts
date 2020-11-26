@@ -30,6 +30,7 @@ import { SearchFilterComponent } from './components/search/search-filter/search-
 import mockServer from './app.mocks';
 import { RestaurantComponent } from './components/restaurant/restaurant-list/restaurant.component';
 import { RestaurantCreateComponent } from './components/restaurant/restaurant-create/restaurant-create.component';
+import { ProductSingleComponent } from './components/product/product-single/product-single.component';
 
 mockServer();
 
@@ -50,7 +51,8 @@ mockServer();
     SearchComponent,
     SearchFilterComponent,
     RestaurantComponent,
-    RestaurantCreateComponent
+    RestaurantCreateComponent,
+    ProductSingleComponent
   ],
   imports: [
     BrowserModule,

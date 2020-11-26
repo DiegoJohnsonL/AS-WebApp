@@ -173,16 +173,26 @@ body {
 	}
   }
 
-  .titled {
-	font-family: 'Merriweather', serif !important;
-	font-size: 58px !important;
-	font-weight: 400 !important;
-	line-height: 64px !important;
-  }
+.titled {
+font-family: 'Merriweather', serif !important;
+font-size: 58px !important;
+font-weight: 400 !important;
+line-height: 64px !important;
+}
 
-  .subtitled {
-	font-family: 'Merriweather', serif !important;
-	font-size: 22px !important;
-	font-weight: 400 !important;
-	line-height: 36px !important;
-  }
+.subtitled {
+font-family: 'Merriweather', serif !important;
+font-size: 22px !important;
+font-weight: 400 !important;
+line-height: 36px !important;
+}
+
+
+.btn-container{
+	margin: 50px;
+
+}
+
+.restaurante{
+	padding: 25px;
+}

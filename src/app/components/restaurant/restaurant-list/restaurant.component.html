@@ -1,18 +1,46 @@
 <div class="restaurant section">
     <div class="columns">
         <div class="column is-one-third restaurant-box">
-            <h3 class="title is-5">
-                {{restaurant.name}}
-            </h3>
-            <hr/>
-            <p>{{restaurant.email}}</p>
-            <p>{{restaurant.phoneNumber}}</p>
+            <div>
+                <h3 class="title is-4">
+                    {{restaurant.name}}
+                </h3>
+                <hr/>
+                <p>{{restaurant.email}}</p>
+                <p>{{restaurant.phoneNumber}}</p>
+            </div>
+            <div class="row">
+                <button class="button">
+                    Agregar Productos
+                </button>
+                <button class="button">
+                    Editar Restaurante
+                </button>
+            </div>
+            <div class="box ">
+                <h5 class="title is-5" >
+                    TAGS
+                </h5>
+                <div class="columns is-multiline">
+                    <p class="column tag">tag 1</p>
+                    <p class="column tag">tag 2</p>
+                    <p class="column tag">tag 3</p>
+                    <p class="column tag">tag 4</p>
+                    <p class="column tag">tag 5</p>
+                    <p class="column tag">tag 4</p>
+                    <p class="column tag">tag 5</p>
+                </div>
+            </div>
         </div>
         <div class="columns is-multiline">
             <div class="column box is-one-third" marginBottom="30px" 
                 *ngFor="let product of products">
                 <img src="https://picsum.photos/id/1080/200/200" class="is-200x200" alt="products">
-                <h6 class="subtitle">{{ product.name }}</h6>
+                <h6 class="subtitle">
+                    <a [routerLink]="['/products/id/', product.id]">
+                        {{ product.name }}
+                    </a>
+                </h6>
                 <p class="price"><b>Precio:</b> {{ product.price.toFixed(2) }}</p>
                 <button class="button is-primary">Ordenar</button>
             </div>
