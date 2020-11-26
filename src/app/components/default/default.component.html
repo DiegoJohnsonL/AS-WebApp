@@ -56,7 +56,7 @@
       </div>
     </div>
   </section>
-<div class="btn-container container"> 
+<div *ngIf="access" class="btn-container container"> 
   <a [routerLink]="['/restaurante/create']" class="button is-large is-primary is-fullwidth">
       Agregar Restaurante
   </a>

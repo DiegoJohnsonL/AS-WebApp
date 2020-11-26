@@ -4,6 +4,7 @@ import { Restaurant } from '../../../models/restaurant.model';
 import { Product } from '../../../models/product.model';
 import { ProductService } from '../../../services/product.service'
 import { RestaurantService } from '../../../services/restaurant.service';
+import { UserStorageService } from '../../../services/user-storage.service';
 
 @Component({
   selector: 'app-restaurant',
@@ -14,12 +15,18 @@ export class RestaurantComponent implements OnInit {
   public restaurant :  Restaurant;
   public products : Array<Product>;
   public id : number;
+  public access: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private restaurantService: RestaurantService,
     private productService: ProductService,
-  ) {  }
+    private userStorageService: UserStorageService
+  ) {  
+    if (userStorageService.type === "administracion"){
+      this.access = true;
+    }
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {

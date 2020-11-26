@@ -9,7 +9,7 @@
                 <p>{{restaurant.email}}</p>
                 <p>{{restaurant.phoneNumber}}</p>
             </div>
-            <div class="row">
+            <div *ngIf="access" class="row">
                 <button [routerLink]="['/products/create/restaurant/', id]" class="button">
                     Agregar Productos
                 </button>
@@ -17,7 +17,7 @@
                     Editar Restaurante
                 </button>
             </div>
-            <div class="box ">
+            <div class="box">
                 <h5 class="title is-5" >
                     TAGS
                 </h5>

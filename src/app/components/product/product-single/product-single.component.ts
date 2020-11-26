@@ -25,8 +25,7 @@ export class ProductSingleComponent implements OnInit {
   }
 
   loadData(restaurantId) {
-    console.log(restaurantId);
     this.productService.get(this.id, restaurantId)
-      .subscribe(data => (this.product = data.body.content))
+      .subscribe(data => (this.product = data.body))
   }
 }

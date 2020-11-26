@@ -22,7 +22,11 @@ export class ProductService {
   }
 
   get(id: number, restaurantId: number): Observable<Product> {
-    return this.http.get<any>(`${environment.apiUrl}restaurant/${restaurantId}/products/${id}`);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json',
+    'Authorization': `Bearer ${this.userStorageService.token}` });
+
+    return this.http.get<any>(`${environment.apiUrl}restaurants/${restaurantId}/products/${id}`,  
+    { headers: headers });
   }
 
   getAllByRestaurant(id: number, restaurantId: number): Observable<Product[]> {

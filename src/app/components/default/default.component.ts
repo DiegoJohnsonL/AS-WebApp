@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { Restaurant } from '../../models/restaurant.model';
 import { RestaurantService } from '../../services/restaurant.service';
 
-
 @Component({
   selector: 'app-default',
   templateUrl: './default.component.html',
@@ -15,13 +14,16 @@ export class DefaultComponent implements OnInit {
   public user: SessionUser;
   public query: string;
   public restaurants: Array<Restaurant>;
+  public access: boolean = false;
 
   constructor(
     private userStorageService: UserStorageService,
     private restaurantService: RestaurantService,
     private router: Router
   ) { 
-    
+    if (userStorageService.type === "administracion"){
+      this.access = true;
+    }
     this.loadData();
   }
 
