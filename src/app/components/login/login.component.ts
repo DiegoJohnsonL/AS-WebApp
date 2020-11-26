@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
     self.user.name = self.model.name;
     self.user.type = self.model.type;
     self.user.id = 0;
+    self.user.token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJVbmlkZXh0ZXIiLCJpYXQiOjE2MDYzNjAwNDMsImV4cCI6MTYwNjM2MzY0M30.N1_kDIbUKVEY9vjcKUXWdBiXRHwyru9jRdEl09DQVYN1TGkFiTRIsdnKC0Icc0HMEXAN53XZoBMEsLDB4AV91A";
 
     
     self.router.navigate(['/']);

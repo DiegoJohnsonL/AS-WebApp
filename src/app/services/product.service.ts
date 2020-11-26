@@ -13,7 +13,12 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getAll(restaurantId: number): Observable<Product[]> {
-    return this.http.get<Product[]>(`${environment.apiUrl}restaurant/${restaurantId}/products`);
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJVbmlkZXh0ZXIiLCJpYXQiOjE2MDYzNTkyNDgsImV4cCI6MTYwNjM2Mjg0OH0.nDMOcoeJPxWTZsQOUS_gcBLLMFCL5-m1An5LKVeJcICvJ3xWyRhKyLd4Zmqw1Oi9n7p7eVLkgcBwVc8zqLB31A'
+    })
+
+    return this.http.get<Product[]>(`restaurant/${restaurantId}/products`,  { headers: headers });
   }
 
   get(id: number, restaurantId: number): Observable<Product> {
@@ -21,6 +26,7 @@ export class ProductService {
   }
 
   getAllByRestaurant(id: number, restaurantId: number): Observable<Product[]> {
+
     return this.http.get<Product[]>(`restaurant/${restaurantId}/products/${id}`);
   }
 

@@ -29,9 +29,9 @@ export class RestaurantComponent implements OnInit {
   }
 
   loadData() {
-    this.productService.getAllByRestaurant(this.id)
+    this.productService.getAll(this.id)
       .subscribe(data => (this.products = [...data]));
-    this.restaurantService.getRestaurant(this.id)
+    this.restaurantService.get(this.id)
       .subscribe(data => (this.restaurant = data));
   }
 }

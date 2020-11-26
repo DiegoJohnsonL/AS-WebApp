@@ -3,4 +3,5 @@ export class SessionUser {
   username: string;
   name: string;
   type: string;
+  token: string;
 }

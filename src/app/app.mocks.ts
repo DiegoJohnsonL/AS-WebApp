@@ -117,9 +117,8 @@ export default () => {
           return restaurant;
         });
 
-        this.get('/products/:id', (schema, request) => {
+        this.get('/restaurants/:id/products', (schema, request) => {
             const products =  schema.db.products.where({restaurant: request.params.id})
-            console.log(products)
             return products
         });
 
