@@ -10,7 +10,7 @@
                 <p>{{restaurant.phoneNumber}}</p>
             </div>
             <div class="row">
-                <button class="button">
+                <button [routerLink]="['/products/create/restaurant/', id]" class="button">
                     Agregar Productos
                 </button>
                 <button class="button">

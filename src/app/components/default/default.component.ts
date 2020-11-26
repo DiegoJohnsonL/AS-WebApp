@@ -26,13 +26,12 @@ export class DefaultComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user=this.userStorageService.user;
+    this.user = this.userStorageService.user;
   }
 
   loadData() {
     this.restaurantService.getRestaurants()
       .subscribe(data => {
-        console.log(data);
         this.restaurants = [...data.body.content]
       });
   }

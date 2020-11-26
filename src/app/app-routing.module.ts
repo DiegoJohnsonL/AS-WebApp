@@ -30,7 +30,7 @@ const routes: Routes = [
       {path:'',component:ProductListComponent, data:{
         roles: ['ROLE_ADMIN', 'ROLE_CLIENT'],
         } },
-      {path:'create',component:ProductCreateComponent, 
+      {path:'create/restaurant/:id',component:ProductCreateComponent, 
         data:{roles: ['ROLE_ADMIN']}},
       {path:':id/update',component:ProductUpdateComponent, 
         data:{roles: ['ROLE_ADMIN']}},

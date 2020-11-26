@@ -30,8 +30,8 @@ export class RestaurantComponent implements OnInit {
 
   loadData() {
     this.productService.getAll(this.id)
-      .subscribe(data => (this.products = [...data]));
+      .subscribe(data => (this.products = [...data.body.content]));
     this.restaurantService.get(this.id)
-      .subscribe(data => (this.restaurant = data));
+      .subscribe(data => (this.restaurant = data.body));
   }
 }

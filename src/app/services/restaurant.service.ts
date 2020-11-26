@@ -24,6 +24,7 @@ export class RestaurantService {
   public get(id: number) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json',
     'Authorization': `Bearer ${this.userStorageService.token}` });
+    console.log(`${this.restaurantUrl}/${id}`)
     return this.http.get<Restaurant>(`${this.restaurantUrl}/${id}`, {headers: headers});
   }
 
