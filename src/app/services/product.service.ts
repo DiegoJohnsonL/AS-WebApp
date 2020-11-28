@@ -2,7 +2,7 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {Product} from '../models/product.model';
+import { Product } from '../models/product.model';
 import {environment} from '../../environments/environment';
 import { UserStorageService } from './user-storage.service';
 
